@@ -1,5 +1,5 @@
 <?php
-$db_location = "localhost"; 
+$db_location = "cs.smu.ca"; 
 $db_username = "cs4477215";
 $db_password = "finPelk2";
 $db_database = "cs4477215";
