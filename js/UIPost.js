@@ -3,15 +3,8 @@ var yearTags=['none'];
 var typeTags=['none'];
 var modelTags=['none'];
 
-$.ajax(
-{
-    type='POST',
-    async: false,
-    url: 'vehMake.php',
-    sucess : function(data)
-    {
-        makeTags = data.split(',');
-    }
+$.post('../php/Year.php',function(data){
+    makeTags = data.split(',');
 });
 // $.ajax(
 // {
