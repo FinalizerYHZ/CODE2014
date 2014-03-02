@@ -48,15 +48,6 @@ $(function() {
     $("#vehMake").autocomplete({
       source: makeTags
     });
-    $( "#year" ).autocomplete({
-      source: yearTags
-    });
-    $( "#model" ).autocomplete({
-      source: modelTags
-    });
-    $( "#type" ).autocomplete({
-      source: typeTags
-    });
 });
 $(document).ready(function(){
     
