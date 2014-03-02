@@ -12,57 +12,16 @@
     <script src="../js/jquery/jquery-1.10.2js"></script>
     <script src ="../js/UIPost.js"></script>
     <link href="../css/jquery-ui-1.10.4.custom.css" rel="stylesheet">
-    
-    <script>
-  $(function() {
-    var availableTags = [
-      "ActionScript",
-      "AppleScript",
-      "Asp",
-      "BASIC",
-      "C",
-      "C++",
-      "Clojure",
-      "COBOL",
-      "ColdFusion",
-      "Erlang",
-      "Fortran",
-      "Groovy",
-      "Haskell",
-      "Java",
-      "JavaScript",
-      "Lisp",
-      "Perl",
-      "PHP",
-      "Python",
-      "Ruby",
-      "Scala",
-      "Scheme"
-    ];
-    $( "#tags" ).autocomplete({
-      source: availableTags
-    });
-  });
-  </script>
     <title>SMU Team Delta</title>
 </head>
   
-  <body style="" >
+<body>
     <div class="maincontainer" >
       <div class="picturebar" >
         <div class="header" >
-          <h1>Top Ten recalls</h1>
+          <h1>Find Car To Check for Recalls</h1>
           <p>Right people. Right solutions.</p>
         </div>
-
-        <div class="guestbutton" >
-          <none>Guest</none>
-        </div>
-
-        <div class="clientbutton" >
-          <none>Client</none>
-        </div>
-
       </div>
 
       <div class="companyname" >
@@ -71,20 +30,36 @@
 
       <div class="contentbox" >
         <div class="sidebar" >
+            <h1>Options For Selections</h1>
+            <h2>Must at least select one or more options to search for</h2>
+            <br><br>
             <form id="form">
-                Tags:<input type="text" name="firstBox" id="tags" title="type &quot;a&quot;"><br><br>
-                <input type="submit">
+                <table>
+                    <tr>
+                        <td>Vehicle Make:</td>
+                        <td><input align="left" type="text" name="make" id="vehMake" title="type &quot;a&quot;"></td>
+                    </tr>
+                    <tr>
+                        <td>Model:</td>
+                        <td><input align="left" type="text" name="model" id="model" title="type &quot;a&quot;"></td>
+                    </tr>
+                    <tr>
+                        <td>Vehicle Type:</td>
+                        <td><input align="left"type="text" name="type" id="type" title="type &quot;a&quot;" ></td>
+                    </tr>
+                    <tr>
+                        <td>Year:</td>
+                        <td><input align="left"type="text" name="year" id="year" title="type &quot;a&quot;" size="4" maxlength="4"></td>
+                    </tr>
+                </table>
+                <input type="submit" >
             </form>
-            <h2><img src="../images/bullet.gif" alt="" /><a href="http://www.google.com" >Go to Google</a></h2>
-            <h2><img src="../images/bullet.gif" alt="" /><a>Go to other</a></h2>
-            <h2><img src="../images/bullet.gif" alt="" /><a>Go To Last</a></h2>
-            <p></p>
         </div>
 
         <div class="maincontent" >
-          <h2>Can you handle every single aspect?</h2>
           <h1>Outsourcing key project elements</h1>
           <div id="dataFromDB">
+              <p>No data Yet!</p>
           </div>
         </div>
 
@@ -113,11 +88,11 @@
       </div>
 
       <div class="topten" >
-         <a href="#" style="color: inherit;text-decoration:none;">Top Ten Recalls</a>
+         <a href="#" style="color: inherit;text-decoration:none;">Worst Offenders</a>
       </div>
 
       <div class="referencesbutton" >
-        <none>Search Recalls</none>
+        <a href="#" style="color: inherit;text-decoration:none;">Search</a>
       </div>
 
       <div class="servicesbutton" >
