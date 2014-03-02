@@ -13,36 +13,36 @@ $.ajax(
         makeTags = data.split(',');
     }
 });
-$.ajax(
-{
-    type='POST',
-    async: false,
-    url: '../php/Year.php',
-    sucess : function(data)
-    {
-        yearTags = data.split(',');
-    }
-});
-$.ajax(
-{
-    type='POST',
-    async: false,
-    url: '../php/Type.php',
-    sucess : function(data)
-    {
-        typeTags = data.split(',');
-    }
-});
-$.ajax(
-{
-    type='POST',
-    async: false,
-    url: '../php/model.php',
-    sucess : function(data)
-    {
-        modelTags = data.split(',');
-    }
-});
+// $.ajax(
+// {
+//     type='POST',
+//     async: false,
+//     url: '../php/Year.php',
+//     sucess : function(data)
+//     {
+//         yearTags = data.split(',');
+//     }
+// });
+// $.ajax(
+// {
+//     type='POST',
+//     async: false,
+//     url: '../php/Type.php',
+//     sucess : function(data)
+//     {
+//         typeTags = data.split(',');
+//     }
+// });
+// $.ajax(
+// {
+//     type='POST',
+//     async: false,
+//     url: '../php/model.php',
+//     sucess : function(data)
+//     {
+//         modelTags = data.split(',');
+//     }
+// });
 
 $(function() {
     $( "#vehMake" ).autocomplete({
