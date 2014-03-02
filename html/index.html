@@ -1,0 +1,37 @@
+<html>
+<head>
+    <script src="../js/jquery/jquery.min.js"></script>
+    <script src="../js/UINavigation.js"></script>
+</head>
+<body onLoad="initilNavConditions()">
+    <div id="body">
+        <div id="selection" class="selection">
+            <select>
+                <option value="0">Ford</option>
+                <option value="1">BMW</option>
+                <option value="2">Blue</option>
+                <option value="3">Red</option>
+            </select>
+            <br>
+            Year: <input type="text" id="year" maxlength="4" size="4">
+            <br>
+            <button type="button" onClick="changeScreenView(1)">showcase1</button>
+            <button type="button" onClick="changeScreenView(2)">showcase2</button>
+            <button type="button" onClick="">Calculate One Last Thing</button>
+        </div>
+        <div id="showcase1" class="showcase1">
+            <div id="Comments">
+                <p>This is the View for one of the options we could have!</p>
+                <button type="button" onClick="changeScreenView(0)">Go Back</button>
+            </div>
+        </div>
+        
+        <div id="showcase2" class="showcase2">
+            <div id="Comments">
+                <p>Here is yet another</p>
+                <button type="button" onClick="changeScreenView(0)">Go Back</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
