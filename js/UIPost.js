@@ -3,6 +3,16 @@ var yearTags=['none'];
 var typeTags=['none'];
 var modelTags=['none'];
 
+$.ajax(
+{
+    type='POST',
+    async: false,
+    url: 'vehMake.php',
+    sucess : function(data)
+    {
+        makeTags = data.split(',');
+    }
+});
 // $.ajax(
 // {
 //     type='POST',
@@ -35,16 +45,6 @@ var modelTags=['none'];
 // });
 
 $(function() {
-    $.ajax(
-{
-    type='POST',
-    async: false,
-    url: 'vehMake.php',
-    sucess : function(data)
-    {
-        makeTags = data.split(',');
-    }
-});
     $( "#vehMake" ).autocomplete({
       source: makeTags
     });
