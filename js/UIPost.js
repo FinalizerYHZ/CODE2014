@@ -45,7 +45,7 @@ $.ajax(
 // });
 
 $(function() {
-    $( "#vehMake" ).autocomplete({
+    $("#vehMake").autocomplete({
       source: makeTags
     });
     $( "#year" ).autocomplete({
