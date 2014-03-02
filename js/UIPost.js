@@ -7,7 +7,7 @@ $.ajax(
 {
     type:'POST',
     async: false,
-    url: 'vehMake.php',
+    url: '../php/vehMake.php',
     sucess : function(data)
     {
         makeTags = data.split(',');
