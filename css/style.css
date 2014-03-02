@@ -110,7 +110,7 @@
 
 }
 
-.careerbutton{
+.topten{
   position:absolute;
   top:-7px;
   left:700px;
@@ -146,7 +146,7 @@
 
 }
 
-.careerbutton:hover{
+.topten:hover{
   background-image:url(../images/tabhover.gif);
   background-repeat: no-repeat;
   background-position:center right;
