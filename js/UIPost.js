@@ -1,39 +1,61 @@
-var availableTags = [
-      "ActionScript",
-      "AppleScript",
-      "Asp",
-      "BASIC",
-      "C",
-      "C++",
-      "Clojure",
-      "COBOL",
-      "ColdFusion",
-      "Erlang",
-      "Fortran",
-      "Groovy",
-      "Haskell",
-      "Java",
-      "JavaScript",
-      "Lisp",
-      "Perl",
-      "PHP",
-      "Python",
-      "Ruby",
-      "Scala",
-      "Scheme"
-];
+var makeTags = ['none'];
+var yearTags=['none'];
+var typeTags=['none'];
+var modelTags=['none'];
+
+// $.ajax(
+// {
+//     type='POST',
+//     async: false,
+//     url: '../php/vehMake.php',
+//     sucess : function(data)
+//     {
+//         makeTags = data.split(',');
+//     }
+// });
+// $.ajax(
+// {
+//     type='POST',
+//     async: false,
+//     url: '../php/Year.php',
+//     sucess : function(data)
+//     {
+//         yearTags = data.split(',');
+//     }
+// });
+// $.ajax(
+// {
+//     type='POST',
+//     async: false,
+//     url: '../php/Type.php',
+//     sucess : function(data)
+//     {
+//         typeTags = data.split(',');
+//     }
+// });
+// $.ajax(
+// {
+//     type='POST',
+//     async: false,
+//     url: '../php/model.php',
+//     sucess : function(data)
+//     {
+//         modelTags = data.split(',');
+//     }
+// });
+
 $(function() {
     $( "#vehMake" ).autocomplete({
-      source: availableTags
+      source: makeTags
     });
     $( "#year" ).autocomplete({
-      source: availableTags
+      source: yearTags
     });
     $( "#model" ).autocomplete({
-      source: availableTags
+      source: modelTags
     });
     $( "#type" ).autocomplete({
-      source: availableTags
+      source: typeTags
     });
 });
 $(document).ready(function(){
@@ -41,9 +63,12 @@ $(document).ready(function(){
     $("#form").submit(function(){
         if($("#vehMake").val().length !=0 ||$("#year").val().length !=0 ||$("#model").val().length !=0 ||$("#type").val().length !=0)
         {
-            $.post("query.php",$("#form").serialize(),function(data){
-                $("#dataFromDB").html(data);
-            });
+            if(checkIfRightValue())
+            {
+                $.post("query.php",$("#form").serialize(),function(data){
+                    $("#dataFromDB").html(data);
+                });
+            }
         }
         else
         {
@@ -58,42 +83,55 @@ function checkIfRightValue()
 {
     if($("#vehMake").val().length !=0)
     {
-        for(var i=0;i<availableTags.length;i++)
-            if($("#vehMake").val() === availableTags[i])
+        for(var i=0;i<makeTags.length;i++)
+        {
+            console.log(makeTags[i])
+            if($("#vehMake").val() === makeTags[i])
             {
                 return true;
+            
             }
         }
+        alert("Option in Vehicle Make does not make values in data. Please try again");
         return false;
     }
-    if($("#year").val() !=0)
+    else if($("#model").val().length !=0)
     {
-        for(var i=0;i<availableTags.length;i++)
-            if($("#year").val() === availableTags[i])
+        for(var i=0;i<modelTags.length;i++)
+        {
+            if($("#model").val() === modelTags[i])
             {
                 return true;
+            
             }
         }
+        alert("Option in Vehicle Make does not make values in data. Please try again");
         return false;
     }
-    if($("#model").val() !=0)
+    else if($("#type").val().length !=0)
     {
-        for(var i=0;i<availableTags.length;i++)
-            if($("#model").val() === availableTags[i])
+        for(var i=0;i<typeTags.length;i++)
+        {
+            if($("#type").val() === typeTags[i])
             {
                 return true;
+            
             }
         }
+        alert("Option in Vehicle type does not make values in data. Please try again");
         return false;
     }
-    if($("#type").val() !=0)
+    else if($("#year").val().length !=0)
     {
-        for(var i=0;i<availableTags.length;i++)
-            if($("#type").val() === availableTags[i])
+        for(var i=0;i<yearTags.length;i++)
+        {
+            if($("#year").val() === yearTags[i])
             {
                 return true;
+            
             }
         }
+        alert("Option in Year does not make values in data. Please try again");
         return false;
     }
 }
