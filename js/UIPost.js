@@ -5,7 +5,7 @@ var modelTags=['none'];
 
 $.ajax(
 {
-    type='POST',
+    type:'POST',
     async: false,
     url: '../php/vehMake.php',
     sucess : function(data)
@@ -13,49 +13,40 @@ $.ajax(
         makeTags = data.split(',');
     }
 });
-$.ajax(
-{
-    type='POST',
-    async: false,
-    url: '../php/Year.php',
-    sucess : function(data)
-    {
-        yearTags = data.split(',');
-    }
-});
-$.ajax(
-{
-    type='POST',
-    async: false,
-    url: '../php/Type.php',
-    sucess : function(data)
-    {
-        typeTags = data.split(',');
-    }
-});
-$.ajax(
-{
-    type='POST',
-    async: false,
-    url: '../php/model.php',
-    sucess : function(data)
-    {
-        modelTags = data.split(',');
-    }
-});
+// $.ajax(
+// {
+//     type='POST',
+//     async: false,
+//     url: '../php/Year.php',
+//     sucess : function(data)
+//     {
+//         yearTags = data.split(',');
+//     }
+// });
+// $.ajax(
+// {
+//     type='POST',
+//     async: false,
+//     url: '../php/Type.php',
+//     sucess : function(data)
+//     {
+//         typeTags = data.split(',');
+//     }
+// });
+// $.ajax(
+// {
+//     type='POST',
+//     async: false,
+//     url: '../php/model.php',
+//     sucess : function(data)
+//     {
+//         modelTags = data.split(',');
+//     }
+// });
 
 $(function() {
-    $( "#vehMake" ).autocomplete({
+    $("#vehMake").autocomplete({
       source: makeTags
-    });
-    $( "#year" ).autocomplete({
-      source: yearTags
-    });
-    $( "#model" ).autocomplete({
-      source: modelTags
-    });
-    $( "#type" ).autocomplete({
-      source: typeTags
     });
 });
 $(document).ready(function(){

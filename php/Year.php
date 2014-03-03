@@ -1,7 +1,7 @@
 <?php
-$db_location = "cs.smu.ca"; 
+$db_location = "localhost"; 
 $db_username = "cs4477215";
-$db_password = "finPelk2";
+$db_password = "finPelk";
 $db_database = "cs4477215";
 $db_connection = mysql_connect("$db_location","$db_username","$db_password") 
 	or die ("Error - Could not connect to MySQL Server");
