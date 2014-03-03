@@ -15,7 +15,7 @@ class Dataset
 		
 		i = 0
 		entry = {}
-		while (line = file.gets)
+		while (line = @file.gets)
 			arr = line.split(",")
 			arr.each do |x|
 				entry.merge!(@header[i] => x)
@@ -33,8 +33,16 @@ class Dataset
 	end
 
 	def column(header)
-		# gets all values in column with header = #header
-		#returns as a hash where {row_number: value}
+		count = 0
+		column = {}
+		@rows.each do |x|
+			if x[header]
+				column.merge!(count, x[header])
+				count = count + 1
+			end
+		end
+		
+		column
 	end
 
 
