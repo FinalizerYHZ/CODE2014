@@ -40,7 +40,7 @@ for ($i = 0; $i < $numRecords; $i++)
 // MySQL database. In this case, we can show the first 30 different manufacturers from the database in
 // no distinct order.
 
-$sql = "SELECT distinct VehMake FROM InfoFull LIMIT 30";
+$sql = "SELECT distinct Manufacturer FROM InfoFull LIMIT 30";
 $result = mysql_query($sql) or die(mysql_error());
 
 echo "<select name='VehMake'>";
