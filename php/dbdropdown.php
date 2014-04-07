@@ -9,7 +9,7 @@
 // to the table made it unreadable.
 
 /*
-$query = "SELECT * FROM CODEMode3 LIMIT 30";
+$query = "SELECT * FROM InfoFull LIMIT 30";
 $category = mysql_query($query) or die(mysql_error());
 
 $numRecords = mysql_num_rows($category); 
