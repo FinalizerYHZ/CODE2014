@@ -1,6 +1,14 @@
 <?php
 // NOTE: For security purposes, the DB name, location and password were removed from this file.
 // They would normally go here.
+$db_location = "164.243.83.105";
+$db_username = "root";
+$db_password = "password";
+$db_database = "CODE2014";
+$db_connection = mysql_connect("$db_location","$db_username","$db_password")
+        or die ("Error - Could not connect to MySQL Server");
+$db = mysql_select_db($db_database,$db_connection)
+        or die ("Error - Could not open database");
 
 
 // Beneath is code to create a table of the SQL database and show the first 30 rows of information.
@@ -32,7 +40,7 @@ for ($i = 0; $i < $numRecords; $i++)
 // MySQL database. In this case, we can show the first 30 different manufacturers from the database in
 // no distinct order.
 
-$sql = "SELECT distinct VehMake FROM CODEMode3 LIMIT 30";
+$sql = "SELECT distinct VehMake FROM InfoFull LIMIT 30";
 $result = mysql_query($sql) or die(mysql_error());
 
 echo "<select name='VehMake'>";
